@@ -1,0 +1,10 @@
+image: mnbbrown/ci:latest
+script:
+  - make deps
+  - make build-linux
+  - scripts/docker.sh
+
+notify:
+  email:
+    recipients:
+      - me@matthewbrown.io
