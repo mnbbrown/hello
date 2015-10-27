@@ -1,5 +1,6 @@
 build:
     image: mnbbrown/ci:latest
+    privileged: true
     commands:
         - make deps
         - make build-linux
