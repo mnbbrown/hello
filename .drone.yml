@@ -10,7 +10,7 @@ publish:
         repo: mnbbrown/hello
         tag: $$COMMIT
         file: Dockerfile
-        storage_driver: overlay
+        context: .
 
 notify:
     slack:
