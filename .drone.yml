@@ -1,10 +1,16 @@
 build:
     image: mnbbrown/ci:latest
-    privileged: true
     commands:
         - make deps
         - make build-linux
-        - scripts/docker.sh
+
+publish:
+    docker:
+        registry: registry.matthewbrown.io
+        repo: mnbbrown/hello
+        tag: $$COMMIT
+        file: Dockerfile
+        storage_driver: overlay
 
 notify:
     slack:
