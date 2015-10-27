@@ -1,10 +1,12 @@
-image: mnbbrown/ci:latest
-script:
-  - make deps
-  - make build-linux
-  - scripts/docker.sh
+build:
+    image: mnbbrown/ci:latest
+    commands:
+        - make deps
+        - make build-linux
+        - scripts/docker.sh
 
 notify:
-  email:
-    recipients:
-      - me@matthewbrown.io
+    slack:
+        webhook_url: https://hooks.slack.com/services/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
+        channel: devops
+        username: drone
