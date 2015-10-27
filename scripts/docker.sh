@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-cd /var/cache/drone/src/github.com/mnbbrown/hello
+cd $DRONE_DIR
 
 wrapdocker > /dev/null 2>&1 &
 sleep 5
