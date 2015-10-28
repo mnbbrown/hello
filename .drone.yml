@@ -9,8 +9,7 @@ publish:
         registry: registry.matthewbrown.io
         repo: mnbbrown/hello
         tag: $$COMMIT
-        file: Dockerfile
-        context: .
+        storage_driver: overlay
 
 notify:
     slack:
