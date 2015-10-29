@@ -8,7 +8,9 @@ publish:
     docker:
         registry: registry.matthewbrown.io
         repo: mnbbrown/hello
-        tag: $$COMMIT
+        tag:
+            - $$COMMIT
+            - latest
         storage_driver: overlay
 
 notify:
