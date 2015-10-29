@@ -5,10 +5,17 @@ import (
 	"github.com/labstack/echo"
 	mw "github.com/labstack/echo/middleware"
 	"net/http"
+	"os"
 )
 
 func Hello(rw http.ResponseWriter, req *http.Request) {
-	fmt.Fprintln(rw, "Hello")
+	hostname, err := os.Hostname()
+	if err != nil {
+		rw.WriteHeader(http.StatusInternalServerError)
+		fmt.Fprintf(rw, "Error: %s", err.Error())
+		return
+	}
+	fmt.Fprintf(rw, "Hello from %s", hostname)
 }
 
 func main() {
