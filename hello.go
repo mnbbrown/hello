@@ -9,7 +9,9 @@ import (
 )
 
 var (
-	version = "0.0.1"
+	branch = "local"
+	commit = ""
+	date   = ""
 )
 
 func Hello(rw http.ResponseWriter, req *http.Request) {
@@ -19,7 +21,7 @@ func Hello(rw http.ResponseWriter, req *http.Request) {
 		fmt.Fprintf(rw, "Error: %s", err.Error())
 		return
 	}
-	fmt.Fprintf(rw, "Hello from %s", hostname)
+	fmt.Fprintf(rw, "Hello from %s\nbranch: %s\ncommit: %s\ntimestamp: %s", hostname, branch, commit, date)
 }
 
 func main() {
