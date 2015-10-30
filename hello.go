@@ -8,6 +8,10 @@ import (
 	"os"
 )
 
+var (
+	version = "0.0.1"
+)
+
 func Hello(rw http.ResponseWriter, req *http.Request) {
 	hostname, err := os.Hostname()
 	if err != nil {

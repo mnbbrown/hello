@@ -13,6 +13,13 @@ publish:
             - latest
         storage_driver: overlay
 
+deploy:
+    ssh:
+        host: sin-1.matthewbrown.io
+        user: core
+        commands:
+            - sudo systemctl restart hello.service
+
 notify:
     slack:
         webhook_url: https://hooks.slack.com/services/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
